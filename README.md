@@ -32,12 +32,36 @@ We are covering at least the following topics:
 - Project structure
 - Modularity (how to separate and organize code)
 - The standard library
-- IDE's
-- Debugging
+- Other noteworthy libraries
 - Intermediate IO (socket networking)
 - Concurrency
 - Cross-Compiling
 
+## Why C++?
+
+It is a quite easy task to talk bad about C++. The time the language took to
+evolve and offer basic things didn't help either.
+
+But it's flexible and  modern, [actively evolving][cpp-comitee], adding modern
+features without lose the compatibility with C or 'the past'.
+
+## Requirements
+
+This guide was mostly written and tested on [Fedora Linux][get-fedora], with
+either [gcc][gcc] or [clang][clang] compilers. However it is supposed to be
+possible to run those exercises in any operating system with a standard C++
+compiler.
+
+## How this handbook is structured
+
+Each exercise has a README with specific context and instructions on how to
+build and run the sample code. Sometimes it's just a single source file,
+sometimes a more structured project.
+
 [repo]: https://github.com/sombriks/my-cpp-handbook
 [my-golang-handbook]: <https://github.com/sombriks/my-golang-handbook>
 [c]: https://iso-9899.info/wiki/The_Standard
+[cpp-comitee]: https://isocpp.org/std/the-committee
+[get-fedora]: https://fedoraproject.org/workstation/
+[gcc]: https://gcc.gnu.org/
+[clang]: https://clang.llvm.org/cxx_status.html
