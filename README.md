@@ -48,9 +48,9 @@ features without lose the compatibility with C or 'the past'.
 ## Requirements
 
 This guide was mostly written and tested on [Fedora Linux][get-fedora], with
-either [gcc][gcc] or [clang][clang] compilers. However it is supposed to be
+either [gcc][gcc] or [clang][clang] compilers. However, it is supposed to be
 possible to run those exercises in any operating system with a standard C++
-compiler.
+compiler and runtime library.
 
 ## How this handbook is structured
 

@@ -23,8 +23,10 @@ clang++ main.cc -o hello
 ## Noteworthy
 
 Since the advent of multitasking, all that modern computer needs to work is an
-Operating System (Or [Control Program][control-program], if you ar that old) and
-a compiler. Thing are like that because the programs need to be compiled for
-that specific combination of hardware and OS.
+Operating System (or [Control Program][control-program], if you ar that old) and
+a compiler (or an interpreted language, such as [BASIC][basic]). Things are like
+that because the programs need to be compiled for that specific combination of
+hardware and OS.
 
 [control-program]: https://www.youtube.com/watch?v=IKzleg4AcXg
+[basic]: https://en.wikipedia.org/wiki/Commodore_BASIC
