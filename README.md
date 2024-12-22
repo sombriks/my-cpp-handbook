@@ -27,11 +27,11 @@ We are covering at least the following topics:
 - Functions
 - Custom types
 - Classes
+- Templates
 - Compilation and compilers
 - Basic IO (files)
 - Project structure
 - Modularity (how to separate and organize code)
-- The standard library
 - Other noteworthy libraries
 - Intermediate IO (socket networking)
 - Concurrency
