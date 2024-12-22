@@ -25,13 +25,13 @@ We are covering at least the following topics:
 - Primitive types
 - Basic control structures
 - Functions
+- Modularity (how to separate and organize code)
 - Custom types
 - Classes
 - Templates
 - Compilation and compilers
 - Basic IO (files)
 - Project structure
-- Modularity (how to separate and organize code)
 - Other noteworthy libraries
 - Intermediate IO (socket networking)
 - Concurrency

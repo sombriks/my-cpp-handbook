@@ -7,18 +7,23 @@ Yes, there are advantages about knowing all inputs at compile time, such as
 speed optimizations, but true reusable programs can process somewhat arbitrary
 input.
 
+In this exercise we sample the 3 basic ways to capture external information: by
+arguments, environment and interactively.
+
 ## How to build
 
 ```bash
 clang++ input-arguments.cc -o input-arguments
+clang++ input-environment.cc -o input-environment
+clang++ input-interactive.cc -o input-interactive
 ```
-
-The other two samples can be built in a similar way.
 
 ## How to run
 
 ```bash
 ./input-arguments Leonardo
+USER=Leonardo ./input-environment
+./input-interactive
 ```
 
 ## Noteworthy
