@@ -1,5 +1,10 @@
 {
   "cSpell.words": [
+    "cout",
     "fmodules"
-  ]
+  ],
+  "files.associations": {
+    "*.njk": "html",
+    "iostream": "cpp"
+  }
 }
