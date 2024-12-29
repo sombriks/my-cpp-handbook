@@ -24,5 +24,15 @@ int main(int argc, char **argv)
 
   printf("size of a struct containing int, char[3] and long is %lu bytes\n", sizeof(composite));
 
+  printf("All pointer types has the same size since they hold addresses:\n");
+  printf("bool* is %lu bytes\n", sizeof(bool *));
+  printf("char* is %lu bytes\n", sizeof(char *));
+  printf("short* is %lu bytes\n", sizeof(short *));
+  printf("int* is %lu bytes\n", sizeof(int *));
+  printf("long* is %lu bytes\n", sizeof(long *));
+  printf("float* is %lu bytes\n", sizeof(float *));
+  printf("double* is %lu bytes\n", sizeof(double *));
+  printf("struct composite* is %lu bytes\n", sizeof(struct composite *));
+
   return 0;
 }

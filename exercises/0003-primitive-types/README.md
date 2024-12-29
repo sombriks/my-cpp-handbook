@@ -34,6 +34,8 @@ clang++ -Wall sample-types.cc -o sample-types
 
 ## Noteworthy
 
-More complete guide on basic types can be found [here][ctypes].
+More complete guide on basic types can be found [here][ctypes] and
+[here][cpptypes].
 
-[ctypes]: https://en.cppreference.com/w/cpp/language/type
+[ctypes]: https://en.cppreference.com/w/c/language/type
+[cpptypes]: https://en.cppreference.com/w/cpp/language/type
