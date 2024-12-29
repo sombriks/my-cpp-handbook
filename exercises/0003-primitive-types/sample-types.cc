@@ -32,6 +32,7 @@ int main(int argc, char **argv)
   printf("long* is %lu bytes\n", sizeof(long *));
   printf("float* is %lu bytes\n", sizeof(float *));
   printf("double* is %lu bytes\n", sizeof(double *));
+  printf("void* is %lu bytes\n", sizeof(void *));
   printf("struct composite* is %lu bytes\n", sizeof(struct composite *));
 
   return 0;
