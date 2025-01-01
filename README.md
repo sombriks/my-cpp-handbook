@@ -23,7 +23,7 @@ We are covering at least the following topics:
 - Hello world
 - Basic input (environment, arguments, interactive)
 - Primitive types
-- Basic control structures
+- Basic control flow structures
 - Functions
 - Modularity (how to separate and organize code)
 - Custom types

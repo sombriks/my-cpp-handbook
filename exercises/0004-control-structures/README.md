@@ -8,6 +8,9 @@ anything between them belongs to the block. This is true for several languages.
 The `main` function, the [application entry point][entrypoint], owns a block.
 Conditional and repetition structures can own a block.
 
+Code inside a block is read from left to right, top to bottom. Loops, like `for`
+and `while`, and conditionals, like `if` and `switch` can subvert this a little.
+
 ## How to build
 
 ```bash
