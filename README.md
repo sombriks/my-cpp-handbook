@@ -25,6 +25,7 @@ We are covering at least the following topics:
 - Primitive types
 - Basic control flow structures
 - Functions
+- Pointers
 - Modularity (how to separate and organize code)
 - Custom types
 - Classes
