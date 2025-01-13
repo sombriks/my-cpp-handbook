@@ -4,9 +4,11 @@
 
 CC := clang++ -Wall
 
-all: exemplo-01.cc exemplo-02.cc
+all: exemplo-01.cc exemplo-02.cc exemplo-03.cc
 	$(CC) exemplo-01.cc -o exemplo-01  
 	$(CC) exemplo-02.cc -o exemplo-02
+	$(CC) exemplo-03.cc -o exemplo-03
 
 clean:
-	rm -rf exemplo-01 exemplo-02
+	rm -rf exemplo-01 exemplo-02 exemplo-03
+	

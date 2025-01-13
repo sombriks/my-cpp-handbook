@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
 }
 ```
 
-For this example, you can use the [Make][make] tool and then run the generated
+For this example, we can use the [Make][make] tool and then run the generated
 binary:
 
 ```bash
@@ -85,4 +85,35 @@ make
 
 Now things get funny.
 
+By default, values are copied: two distinct variables points to distinct memory
+addresses. If we need to share several results from a function, we either fill
+out a struct (and return a copy of the results), pass pointers or we use
+[the special `&` operator][ref-operator]:
+
+```cpp
+// exemplo-03.cc
+
+#include <cstdio>
+
+// addresses instead of values will be copied to the function argument list.
+void doubleAndPlus(int &toDouble,int &toPlus) {
+  toDouble *= 2;
+  toPlus += 1;
+}
+
+int main(int argc, char **argv) {
+  int a = 10;
+  int b = 20;
+  doubleAndPlus(a, b); // caution, no great difference in the function call.
+  printf("results: %d, %d\n",a,b);
+  return 0;
+}
+```
+
+That way we can use argument list as return values.
+
+This is also a way to optimize memory usage: no copy of big arrays to the
+argument list. Possibilites are infinite!
+
 [make]: https://www.gnu.org/software/make/
+[ref-operator]: https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator
