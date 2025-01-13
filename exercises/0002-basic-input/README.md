@@ -23,7 +23,7 @@ clang++ input-interactive.cc -o input-interactive
 ```bash
 ./input-arguments Leonardo
 USER=Leonardo ./input-environment
-./input-interactive
+./input-interactive # or "echo 'Leonardo' | ./input-interactive"
 ```
 
 ## Noteworthy
