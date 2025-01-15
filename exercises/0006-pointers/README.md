@@ -18,9 +18,13 @@ identifier:
 
 ```cpp
 // pointer-01.cpp
-#include <iostream>
+#include <cstdio>
 
 int main(int argc, char **argv) {
+
+  int a = 10;
+  int b = 20;
+  int *p = &a;
 
   return 0;  
 }
