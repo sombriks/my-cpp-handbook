@@ -27,8 +27,7 @@ We are covering at least the following topics:
 - Functions
 - Pointers
 - Modularity (how to separate and organize code)
-- Custom types
-- Classes
+- Custom types and Classes
 - Templates
 - Compilation and compilers
 - Basic IO (files)
