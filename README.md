@@ -26,11 +26,11 @@ We are covering at least the following topics:
 - Basic control flow structures
 - Functions
 - Pointers
+- Basic IO (files)
 - Modularity (how to separate and organize code)
 - Custom types and Classes
 - Templates
 - Compilation and compilers
-- Basic IO (files)
 - Project structure
 - Other noteworthy libraries
 - Intermediate IO (socket networking)
