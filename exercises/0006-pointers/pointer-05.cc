@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <memory>
+#include <cstring>
 
 struct Contact
 {
@@ -13,11 +14,17 @@ struct Contact
 void nakedLeak()
 { // this leaks memory
   struct Contact *contact = (struct Contact *)malloc(sizeof(struct Contact));
+  contact->id = 123;
+  strcpy(contact->name, "Someone");
+  strcpy(contact->address, "Somewhere");
 }
 
 void smartPointer()
 { // this does not
   std::unique_ptr<struct Contact> contact((struct Contact *)malloc(sizeof(struct Contact)));
+  contact->id = 123;
+  strcpy(contact->name, "Someone");
+  strcpy(contact->address, "Somewhere");
 }
 
 int main(int argc, char **argv)
