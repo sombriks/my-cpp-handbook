@@ -129,7 +129,49 @@ int main(int argc, char **argv) {
 
 ## Modern, safe approach
 
-Modern C++ offers a way to defend the code from such nasty source of bugs.
+Modern C++ offers a way to defend the code from such nasty source of bugs. There
+is [smart pointers][smart-pointers].
+
+The regular pointer for now on will be called [naked-pointer][naked-pointer].
+
+Caution when execute the example bellow. It leaks memory on purpose and might freeze your computer!
+
+```cpp
+// pointer-05.cc
+#include <cstdio>
+#include <cstdlib>
+#include <memory>
+
+struct Contact {
+  unsigned long id;
+  char name[100];
+  char address[300];
+};
+
+void nakedLeak() { // this leaks memory 
+  struct Contact *contact = (struct Contact *) malloc(sizeof(struct Contact));
+}
+
+void smartPointer() { // this does not
+  std::unique_ptr<struct Contact*> contact((struct Contact *) malloc(sizeof(struct Contact)));
+}
+
+int main(int argc, char **argv) {
+  unsigned long int i = 100000000, j = 100000000;
+
+  while (i-- > 0)
+    smartPointer();
+  printf("loop allocating 100000000 times using smart pointer finished\n");
+
+  while (j-- > 0)
+    nakedLeak();
+  printf("loop allocating 100000000 times using naked pointer finished\n");
+
+  return 0;
+}
+```
 
 [primitive-types]: ../0003-primitive-types/README.md
 [functions]: ../0005-functions/README.md
+[smart-pointers]: https://learn.microsoft.com/en-us/cpp/cpp/smart-pointers-modern-cpp?view=msvc-170
+[naked-pointer]: https://cplusplus.com/forum/beginner/276127/#google_vignette

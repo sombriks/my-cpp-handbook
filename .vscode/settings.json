@@ -3,7 +3,8 @@
     "cout",
     "cstdio",
     "cstdlib",
-    "fmodules"
+    "fmodules",
+    "malloc"
   ],
   "files.associations": {
     "*.njk": "html",

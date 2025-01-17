@@ -4,12 +4,13 @@
 
 CC := clang++ -Wall
 
-all: pointer-01.cc pointer-02.cc pointer-03.cc pointer-04.cc
+all: pointer-01.cc pointer-02.cc pointer-03.cc pointer-04.cc pointer-05.cc
 	$(CC) pointer-01.cc -o pointer-01
 	$(CC) pointer-02.cc -o pointer-02
 	$(CC) pointer-03.cc -o pointer-03
 	$(CC) pointer-04.cc -o pointer-04
+	$(CC) pointer-05.cc -o pointer-05
 
 clean:
-	rm -rf pointer-01 pointer-02 pointer-03 pointer-04
+	rm -rf pointer-01 pointer-02 pointer-03 pointer-04 pointer-05
 	
