@@ -5,16 +5,16 @@ Small exercises and experiments on the C++ language.
 Each exercise tries to cope some core aspect of the language, but focused on how
 to solve problemas using it.
 
-Complexity will grow each exercise, and the background history as well. It's the
-same formula from [my golang handbook][my-golang-handbook]
+Complexity will grow with each exercise, and the background history as well.
+It's the same formula from [my golang handbook][my-golang-handbook].
 
 Think about C++ is to think about the computer history itself. The language
-predates the internet and born to ease the task of writing core things, like
-operational systems and network stacks. There is one standard, yet many idioms,
-many libraries, many compilers.
+predates the internet and was born to ease the task of writing core things, like
+operating systems and network stacks. There is one standard, yet there are many
+idioms, many libraries, many compilers.
 
 The language is still evolving. And yet it still holds great retrocompatibility
-with [C][c] language.
+with [C][c] language. This is both the blessing and the curse of C++.
 
 ## Base agenda
 
