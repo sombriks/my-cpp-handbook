@@ -26,7 +26,8 @@ int main(int argc, char **argv)
 
 Mind that the file must exists and must have a number inside it.
 
-Read strings is also easy. Just mind up how to proper read an entire line:
+Read naked, c-style strings is also easy. Just mind up how to proper read an
+entire [line][getline]:
 
 ```cpp
 // 02-file-read.cc
@@ -55,4 +56,5 @@ int main(int argc, char **argv)
 
 [cfile]: https://en.cppreference.com/w/c/io/FILE
 [fstream]: https://cplusplus.com/reference/iolibrary
-[tuto]: https://cplusplus.com/doc/tutorial/files/
+[tuto]: https://cplusplus.com/doc/tutorial/files
+[getline]: https://cplusplus.com/reference/istream/istream/getline
