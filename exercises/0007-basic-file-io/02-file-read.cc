@@ -5,6 +5,7 @@
 
 int main(int argc, char **argv)
 {
+  // file has two lines of words, rthree per line
   std::ifstream someWords("some-words.txt");
   std::string str;
   someWords >> str;

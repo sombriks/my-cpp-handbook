@@ -4,8 +4,11 @@
     "cstdio",
     "cstdlib",
     "cstring",
+    "endline",
     "fmodules",
+    "getline",
     "malloc",
+    "ofstream",
     "strcpy"
   ],
   "files.associations": {
