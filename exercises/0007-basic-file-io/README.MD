@@ -6,6 +6,41 @@ the [fstream][fstream] library.
 
 ## Simple read
 
+Read from a file is quite simple:
+
+```cpp
+// 01-file-read.cc
+#include <iostream>
+#include <fstream>
+
+int main(int argc, char **argv)
+{
+  std::ifstream someNumber("some-numbers.bin");
+  long number = 0;
+  someNumber >> number;
+  std::cout << "Number is " << number << std::endl;
+  someNumber.close();
+  return 0;
+}
+```
+
+Mind that the file must exists and must have a number inside it.
+
+Read strings is also easy. Just mind up how to proper read an entire line:
+
+```cpp
+// 02-file-read.cc
+#include <iostream>
+#include <fstream>
+
+int main(int argc, char **argv)
+{
+  std::ifstream someWords("some-words.txt");
+  
+  return 0;
+}
+```
+
 ## Simple write
 
 ## Custom data
@@ -16,5 +51,8 @@ the [fstream][fstream] library.
 
 ## Noteworthy
 
+- [this nice tutorial][tuto]
+
 [cfile]: https://en.cppreference.com/w/c/io/FILE
 [fstream]: https://cplusplus.com/reference/iolibrary
+[tuto]: https://cplusplus.com/doc/tutorial/files/
