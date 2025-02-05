@@ -9,6 +9,7 @@
     "getline",
     "malloc",
     "ofstream",
+    "seekp",
     "strcpy"
   ],
   "files.associations": {
