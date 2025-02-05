@@ -188,6 +188,8 @@ add_executable(05-custom-read-write 05-custom-read-write.cc)
 
 ## Run
 
+Simply execute the binaries as usual.
+
 ## Noteworthy
 
 - Never trust that a file exists, is accessible or has valid content. Always
@@ -197,6 +199,9 @@ add_executable(05-custom-read-write 05-custom-read-write.cc)
 - The way that `fstream::peek()` and `fstream::eof()` work together might look a
   bit hacky but makes total sense. Streams have no idea that they're done so we
   must check.
+- CMake projects ease the work needed to solve problems related to portable
+  projects. Such problems are not present in those examples, but it's a tool
+  that worths to be studied.
 - Read [This nice tutorial][tuto] for more file access details.
 
 [cfile]: https://en.cppreference.com/w/c/io/FILE
