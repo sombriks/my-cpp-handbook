@@ -160,18 +160,47 @@ int main(int argc, char **argv)
 
 ## Build examples
 
+The samples can be built with [cmake][cmake], a build tool which helps to create
+portable projects more easily:
+
+```bash
+cd 0007-basic-file-io
+cmake .
+make
+```
+
+Cmake projects are configured in a file called CMakeLists.txt and has numerous
+configuration options:
+
+```cmake
+cmake_minimum_required(VERSION 3.20)
+
+project(sample-file-io VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_COMPILER clang++)
+
+add_executable(01-file-read 01-file-read.cc)
+add_executable(02-file-read 02-file-read.cc)
+add_executable(03-file-write 03-file-write.cc)
+add_executable(04-file-write 04-file-write.cc)
+add_executable(05-custom-read-write 05-custom-read-write.cc)
+```
+
 ## Run
 
 ## Noteworthy
 
+- Never trust that a file exists, is accessible or has valid content. Always
+  check it.
 - Write strings are always easy, but read them sometimes demands proper
-  knowledge about it size.
+  knowledge about its size.
 - The way that `fstream::peek()` and `fstream::eof()` work together might look a
   bit hacky but makes total sense. Streams have no idea that they're done so we
   must check.
-- [This nice tutorial][tuto].
+- Read [This nice tutorial][tuto] for more file access details.
 
 [cfile]: https://en.cppreference.com/w/c/io/FILE
 [fstream]: https://cplusplus.com/reference/iolibrary
 [tuto]: https://cplusplus.com/doc/tutorial/files
 [getline]: https://cplusplus.com/reference/istream/istream/getline
+[cmake]: https://cmake.org/getting-started

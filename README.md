@@ -34,7 +34,7 @@ We are covering at least the following topics:
 - Project structure
 - Other noteworthy libraries
 - Intermediate IO (socket networking)
-- Concurrency
+- Concurrency (threads)
 - Cross-Compiling
 
 ## Why C++?

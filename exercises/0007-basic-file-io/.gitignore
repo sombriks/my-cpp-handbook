@@ -5,3 +5,7 @@
 some-information.txt
 05-custom-read-write
 some-custom-data.bin
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeFiles
