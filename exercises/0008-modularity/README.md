@@ -80,3 +80,96 @@ int main(int argc, char **argv)
 Since some functions can be needed on several places in a program, it is also a
 common practice to keep function prototypes in their own file as well and simply
 _include_ them:
+
+```cpp
+// main.cc
+#include <iostream>
+#include "complex-op.h"
+
+int main(int argc, char **argv)
+{
+  std::cout << complex_op(2,2) << std::endl;
+  return 0;
+}
+```
+
+A _header file_  is a special source file that holds the function signatures,
+constant declarations, everything your program offers but doesn't hold any
+implementation. It's a direct C language heritage.
+
+```h
+// complex-op.h
+
+// parameter names are optional
+int complex_op(int, int);
+```
+
+## The (dirty) namespace
+
+While source separation permits bigger and more complex programs to be created
+more easily, bigger programs introduces new challenges.
+
+For example, what happens if two distinct source files defines the same function
+name?
+
+```bash
+sombriks@lucien 0008-modularity $ make
+[ 42%] Built target distinct-files
+[ 57%] Building CXX object CMakeFiles/namespaces.dir/02-namespaces/complex-op-v2.cc.o
+[ 71%] Building CXX object CMakeFiles/namespaces.dir/02-namespaces/complex-op.cc.o
+[ 85%] Building CXX object CMakeFiles/namespaces.dir/02-namespaces/main.cc.o
+[100%] Linking CXX executable namespaces
+/usr/bin/ld: CMakeFiles/namespaces.dir/02-namespaces/complex-op.cc.o: na função "complex_op(int, int)":
+complex-op.cc:(.text+0x0): múltiplas definições de "complex_op(int, int)"; CMakeFiles/namespaces.dir/02-namespaces/complex-op-v2.cc.o:complex-op-v2.cc:(.text+0x0): definido primeiro aqui
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/namespaces.dir/build.make:129: namespaces] Error 1
+make[1]: *** [CMakeFiles/Makefile2:111: CMakeFiles/namespaces.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+```
+
+A simple solution would be to use a different name for the function, however
+this is not always possible. Name issues plagued C projects since ages ago.
+
+In C++, we can use **[namespaces][namespace]** to avoid name clashes:
+
+```cpp
+// complex-op.hh
+
+// parameter names are optional
+int complex_op(int, int);
+
+namespace v2
+{
+  int complex_op(int, int);
+}
+```
+
+The implementation itself needs a few tweaks as well:
+
+```cpp
+// complex-op-v2.cc
+#include "complex-op.hh"
+
+int v2::complex_op(int a, int b)
+{
+  return a * b;
+}
+```
+
+And finally the usage:
+
+```cpp
+// main.cc
+#include <iostream>
+#include "complex-op.hh"
+
+int main(int argc, char **argv)
+{
+  std::cout
+      << complex_op(2, 2) << std::endl
+      << v2::complex_op(2, 2) << std::endl;
+  return 0;
+}
+```
+
+[namespace]: https://learn.microsoft.com/cpp/cpp/namespaces-cpp?view=msvc-170
