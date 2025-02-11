@@ -172,4 +172,71 @@ int main(int argc, char **argv)
 }
 ```
 
+## 'New' C++ modules
+
+C++ keeps evolving and although it keeps C compatibility, new features are there
+to improve performance and developer experience.
+
+[Modules][modules] aims to solve the performance hit a project suffers when
+solving header files dependency graphs:
+
+```cpp
+// complex-op.cc
+export module complex_op;
+
+export int complex_op(int a, int b)
+{
+  return a - b; // let's pretend this is a long, complex operation
+}
+```
+
+Then the module can be used like this:
+
+```cpp
+// main.cc
+#include <iostream>
+
+import complex_op;
+
+int main(int argc, char **argv)
+{
+  std::cout << complex_op(2, 2) << std::endl;
+  return 0;
+}
+```
+
+One important thing about modules is although the standard is 5 years old by the
+time of writing of this handbook, compilers still diverges on how to build
+modules. it has direct impact on project setup:
+
+```cmake
+cmake_minimum_required(VERSION 3.20)
+project(modularity)
+
+file(GLOB distinct_files_src "01-distinct-files/*.cc")
+add_executable(distinct-files ${distinct_files_src})
+
+file(GLOB namespaces_src "02-namespaces/*.cc")
+add_executable(namespaces ${namespaces_src})
+
+file(GLOB modules_src "03-modules/*.cc")
+add_executable(modules ${modules_src})
+target_compile_options(modules PRIVATE -std=c++20 -fmodules-ts)
+```
+
+For module build properly on g++, `-std=c++20 -fmodules-ts` flags must be
+provided, but flags for other compilers [are different][clang-modules].
+
+## Build examples
+
+Configure the CMake project and call make as usual:
+
+```bash
+cd 0008-modularity
+cmake .
+make
+```
+
 [namespace]: https://learn.microsoft.com/cpp/cpp/namespaces-cpp?view=msvc-170
+[modules]: https://en.cppreference.com/w/cpp/language/modules
+[clang-modules]: https://clang.llvm.org/docs/StandardCPlusPlusModules.html#standard-c-named-modules

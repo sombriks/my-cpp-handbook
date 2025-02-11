@@ -67,5 +67,6 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "fstream": "cpp"
-  }
+  },
+  "C_Cpp.default.cppStandard": "c++20"
 }
