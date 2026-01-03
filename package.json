@@ -1,0 +1,29 @@
+{
+  "name": "my-cpp-handbook",
+  "version": "1.0.0",
+  "description": "See main [README.md](docs/README.md)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sombriks/my-cpp-handbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sombriks/my-cpp-handbook/issues"
+  },
+  "homepage": "https://github.com/sombriks/my-cpp-handbook#readme",
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.15"
+  }
+}

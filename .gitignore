@@ -33,3 +33,8 @@
 
 # module cache
 gcm.cache
+
+# node
+node_modules
+docs/.vitepress/dist
+docs/.vitepress/cache
