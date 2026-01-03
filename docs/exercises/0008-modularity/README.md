@@ -97,7 +97,7 @@ A _header file_  is a special source file that holds the function signatures,
 constant declarations, everything your program offers but doesn't hold any
 implementation. It's a direct C language heritage.
 
-```h
+```cpp
 // complex-op.h
 
 // parameter names are optional

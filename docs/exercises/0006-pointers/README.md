@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
 It should output something like this:
 
-```terminal
+```
 sombriks@barbatos 0006-pointers $ ./pointer-01 
 address of a: 0x7ffe01dcdbbc
 address of b: 0x7ffe01dcdbb8
