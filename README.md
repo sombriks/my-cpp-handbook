@@ -1,3 +1,3 @@
-# my-cpp-handbook
+# [my-cpp-handbook](https://cpp-handbook.sombriks.net)
 
-See main [README.md](docs/README.md)
+See main [index.md](docs/index.md)
