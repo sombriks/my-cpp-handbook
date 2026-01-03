@@ -1,5 +1,5 @@
 ---
-name: Deploy static content to Pages
+name: Deploy handbook
 on:
   push:
     branches: ["main"]
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v6
-      - run: npm run ci
+      - run: npm ci
       - run: npm run docs:build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
