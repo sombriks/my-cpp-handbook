@@ -10,6 +10,18 @@ input.
 In this exercise we sample the 3 basic ways to capture external information: by
 arguments, environment and interactively.
 
+## Arguments
+
+<<< input-arguments.cc{cpp}
+
+## Environment
+
+<<< input-environment.cc{cpp}
+
+## Interactive
+
+<<< input-interactive.cc{cpp}
+
 ## How to build
 
 ```bash

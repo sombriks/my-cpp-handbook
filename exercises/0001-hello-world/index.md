@@ -2,6 +2,8 @@
 
 Outputs 'Hello World!' in the console.
 
+<<< hello.cc{cpp}
+
 ## How to build
 
 ```bash
@@ -26,15 +28,7 @@ C++ keeps evolving and new, major features are coming. [Modules][cpp-modules],
 for instance, offers faster compile time for big projects and drift away from
 classic header files. So, our [modern hello world][hello-modern] follows:
 
-```cpp
-import <iostream>;
-
-int main(int argc, char **argv)
-{
-  std::cout << "Hello World!" << std::endl;
-  return 0;
-}
-```
+<<< hello-modern.cc{cpp}
 
 Modules are still considered experimental so you need two command lines to make
 it work using g++:
