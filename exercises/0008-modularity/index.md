@@ -30,7 +30,7 @@ The following example samples the source code split:
 
 The source using this complex operation follows:
 
-<<< 01-distinct-files/main-no-prototype.cc{cpp}
+<<< 01-distinct-files/main-no-prototype.cpp{cpp}
 
 An attempt to compile and run the code the way it is results in the following:
 
@@ -49,7 +49,7 @@ make: *** [Makefile:91: all] Error 2
 
 To solve that issue, the **function prototype** must be available to `main.cc`:
 
-<<< 01-distinct-files/main-plus-prototype.cc{cpp}
+<<< 01-distinct-files/main-plus-prototype.cpp
 
 Since some functions can be needed on several places in a program, it is also a
 common practice to keep function prototypes in their own file as well and simply
