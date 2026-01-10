@@ -20,6 +20,8 @@ depending on cpu architecture, that size nay vary based om how much memory can
 be addressed at once. Some types, such as `byte`, has a well-know size across
 all modern cpu architectures, others will vary.
 
+<<< sample-types.cc{cpp}
+
 ## How to build
 
 ```bash

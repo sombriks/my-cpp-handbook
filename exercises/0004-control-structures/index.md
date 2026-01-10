@@ -11,6 +11,8 @@ Conditional and repetition structures can own a block.
 Code inside a block is read from left to right, top to bottom. Loops, like `for`
 and `while`, and conditionals, like `if` and `switch` can subvert this a little.
 
+<<< control-flow.cc{cpp}
+
 ## How to build
 
 ```bash
