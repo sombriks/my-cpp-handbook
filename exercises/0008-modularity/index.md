@@ -26,26 +26,11 @@ into distinct source files.
 
 The following example samples the source code split:
 
-```cpp
-// complex-op.cc
-int complex_op(int a, int b)
-{
-  return a+b; // let's pretend this is a long, complex operation
-}
-```
+<<< 01-distinct-files/complex-op.cc{cpp}
 
 The source using this complex operation follows:
 
-```cpp
-// main.cc
-#include <iostream>
-
-int main(int argc, char **argv)
-{
-  std::cout << complex_op(2,2) << std::endl;
-  return 0;
-}
-```
+<<< 01-distinct-files/main-no-prototype.cc{cpp}
 
 An attempt to compile and run the code the way it is results in the following:
 
@@ -64,45 +49,19 @@ make: *** [Makefile:91: all] Error 2
 
 To solve that issue, the **function prototype** must be available to `main.cc`:
 
-```cpp
-// main.cc
-#include <iostream>
-
-int complex_op(int,int); // parameter names are optional
-
-int main(int argc, char **argv)
-{
-  std::cout << complex_op(2,2) << std::endl;
-  return 0;
-}
-```
+<<< 01-distinct-files/main-plus-prototype.cc{cpp}
 
 Since some functions can be needed on several places in a program, it is also a
 common practice to keep function prototypes in their own file as well and simply
 _include_ them:
 
-```cpp
-// main.cc
-#include <iostream>
-#include "complex-op.h"
-
-int main(int argc, char **argv)
-{
-  std::cout << complex_op(2,2) << std::endl;
-  return 0;
-}
-```
+<<< 01-distinct-files/main.cc{cpp}
 
 A _header file_  is a special source file that holds the function signatures,
 constant declarations, everything your program offers but doesn't hold any
 implementation. It's a direct C language heritage.
 
-```cpp
-// complex-op.h
-
-// parameter names are optional
-int complex_op(int, int);
-```
+<<< 01-distinct-files/complex-op.h{cpp}
 
 ## The (dirty) namespace
 
@@ -128,49 +87,19 @@ make: *** [Makefile:91: all] Error 2
 ```
 
 A simple solution would be to use a different name for the function, however
-this is not always possible. Name issues plagued C projects since ages ago.
+this is not always possible. Name issues plagued C projects for ages.
 
 In C++, we can use **[namespaces][namespace]** to avoid name clashes:
 
-```cpp
-// complex-op.hh
-
-// parameter names are optional
-int complex_op(int, int);
-
-namespace v2
-{
-  int complex_op(int, int);
-}
-```
+<<< 02-namespaces/complex-op.hh{cpp}
 
 The implementation itself needs a few tweaks as well:
 
-```cpp
-// complex-op-v2.cc
-#include "complex-op.hh"
-
-int v2::complex_op(int a, int b)
-{
-  return a * b;
-}
-```
+<<< 02-namespaces/complex-op-v2.cc{cpp}
 
 And finally the usage:
 
-```cpp
-// main.cc
-#include <iostream>
-#include "complex-op.hh"
-
-int main(int argc, char **argv)
-{
-  std::cout
-      << complex_op(2, 2) << std::endl
-      << v2::complex_op(2, 2) << std::endl;
-  return 0;
-}
-```
+<<< 02-namespaces/main.cc{cpp}
 
 ## 'New' C++ modules
 
@@ -180,49 +109,17 @@ to improve performance and developer experience.
 [Modules][modules] aims to solve the performance hit a project suffers when
 solving header files dependency graphs:
 
-```cpp
-// complex-op.cc
-export module complex_op;
-
-export int complex_op(int a, int b)
-{
-  return a - b; // let's pretend this is a long, complex operation
-}
-```
+<<< 03-modules/complex-op.cc{cpp}
 
 Then the module can be used like this:
 
-```cpp
-// main.cc
-#include <iostream>
-
-import complex_op;
-
-int main(int argc, char **argv)
-{
-  std::cout << complex_op(2, 2) << std::endl;
-  return 0;
-}
-```
+<<< 03-modules/main.cc{cpp}
 
 One important thing about modules is although the standard is 5 years old by the
 time of writing of this handbook, compilers still diverges on how to build
 modules. it has direct impact on project setup:
 
-```cmake
-cmake_minimum_required(VERSION 3.20)
-project(modularity)
-
-file(GLOB distinct_files_src "01-distinct-files/*.cc")
-add_executable(distinct-files ${distinct_files_src})
-
-file(GLOB namespaces_src "02-namespaces/*.cc")
-add_executable(namespaces ${namespaces_src})
-
-file(GLOB modules_src "03-modules/*.cc")
-add_executable(modules ${modules_src})
-target_compile_options(modules PRIVATE -std=c++20 -fmodules-ts)
-```
+<<< CMakeLists.txt{cmake}
 
 For module build properly on g++, `-std=c++20 -fmodules-ts` flags must be
 provided, but flags for other compilers [are different][clang-modules].
