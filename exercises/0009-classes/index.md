@@ -9,3 +9,17 @@ and fix possible issues.
 Classes are the foundational language idiom for that, let's understand why.
 
 ## A matter of state and messages
+
+## Basic class declaration and class definition
+
+## Visibility qualifiers
+
+## Constructor and destructors
+
+## Operator overloading
+
+## Inheritance
+
+## Polymorphism
+
+## Further reading

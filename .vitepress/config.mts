@@ -23,7 +23,8 @@ export default defineConfig({
           { text: 'Functions', link: '/0005-functions/' },
           { text: 'Pointers', link: '/0006-pointers/' },
           { text: 'Basic File I/O', link: '/0007-basic-file-io/' },
-          { text: 'Modularity', link: '/0008-modularity/' }
+          { text: 'Modularity', link: '/0008-modularity/' },
+          { text: 'Classes', link: '/0009-classes/' }
         ]
       }
     ],
