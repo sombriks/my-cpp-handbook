@@ -64,6 +64,9 @@ supposed to be deeply related:
 
 ### Visibility qualifiers
 
+Unlike bare, naked structs, the attributes declared on it aren't accessible
+directly. This is called **encapsulation**.
+
 ## Constructor and destructors
 
 ## Operator overloading
