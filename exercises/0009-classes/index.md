@@ -53,11 +53,16 @@ All kinds of abstractions can be achieved by simply 'coding right'.
 But it demands **experience**.
 
 Another approach is to create foundational language structures to *enforce* code
-quality.
+quality. Ths is where the fun begins.
 
-## Basic class declaration and class definition
+## Basic class declaration and class usage
 
-## Visibility qualifiers
+You can think of classes as a **specification** of states and messages that are
+supposed to be deeply related:
+
+<<< 02-todo-list-with-class/basic-example.cpp
+
+### Visibility qualifiers
 
 ## Constructor and destructors
 
