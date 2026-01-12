@@ -67,9 +67,33 @@ supposed to be deeply related:
 Unlike bare, naked structs, the attributes declared on it aren't accessible
 directly. This is called **encapsulation**.
 
+In the class declaration, anything you want to be available for external usage
+must be declared in the **public** section:
+
+```cpp
+class MyClass {
+  int myPrivateState;
+public:
+  int myPublicMessage();
+};
+```
+
 ## Constructor and destructors
 
-## Operator overloading
+Classes allow special functions for the sole purpose of set the initial state.
+Also, it's possible to set a special function just for resources cleanup. Those
+are the **Constructor** and **Destructor** functions:
+
+<<< 02-todo-list-with-class/constructor-destructor.cpp
+
+How exactly it works?
+
+<<< 03-todo-list-constructor/main.cc{cpp}
+
+By the way, distinct values of the same class are called **objects** or
+**class instances**.
+
+## Function and Operator overloading
 
 ## Inheritance
 
