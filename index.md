@@ -28,15 +28,15 @@ with [C][c] language. This is both the blessing and the curse of C++.
 
 We are covering at least the following topics:
 
-- [Hello world](exercises/0001-hello-world)
-- Basic input (environment, arguments, interactive)
-- Primitive types
-- Basic control flow structures
-- Functions
-- Pointers
-- Basic IO (files)
-- Modularity (how to separate and organize code)
-- Custom types and Classes
+- [Hello world](exercises/0001-hello-world/)
+- [Basic input](exercises/0002-basic-input/) (environment, arguments, interactive)
+- [Primitive types](exercises/0003-primitive-types/)
+- [Basic control flow structures](exercises/0004-control-structures/)
+- [Functions](exercises/0005-functions/) (part 1)
+- [Pointers](exercises/0006-pointers/)
+- [Basic IO](exercises/0007-basic-file-io/) (files)
+- [Modularity](exercises/0008-modularity/) (how to separate and organize code)
+- [Classes](exercises/0009-classes/)
 - Templates
 - Compilation and compilers
 - Project structure

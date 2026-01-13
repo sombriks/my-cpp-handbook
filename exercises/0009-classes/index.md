@@ -95,6 +95,33 @@ By the way, distinct values of the same class are called **objects** or
 
 ## Function and Operator overloading
 
+Another abstraction provided by C++ is called **polymorphism**. It's a way to
+group similar behavior under a common name.
+
+Take the `complete()` method/function/message/behavior for example:
+
+```cpp
+void TodoItem::complete()
+{
+  completed = true;
+}
+```
+
+What if you want a bew behavior, one to mark the item as not completed?
+
+You can either create a `pending()` function, or any other name, or could add an
+argument to the existing method.
+
+But by doing the **signature change** (signature, in short, is the function name
+plus its arguments), other places in the code already using it would need to be
+changed as well.
+
+Instead, just declare an **overload** to the `complete()` method:
+
+```cpp
+//
+```
+
 ## Inheritance
 
 ## Polymorphism
