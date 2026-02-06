@@ -37,7 +37,7 @@ We are covering at least the following topics:
 - [Basic IO](exercises/0007-basic-file-io/) (files)
 - [Modularity](exercises/0008-modularity/) (how to separate and organize code)
 - [Classes](exercises/0009-classes/)
-- Templates
+- [Functions part two](exercises/0010-functions-lambdas/)
 - Compilation and compilers
 - Project structure
 - Other noteworthy libraries

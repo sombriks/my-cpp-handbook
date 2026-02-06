@@ -24,7 +24,8 @@ export default defineConfig({
           { text: 'Pointers', link: '/0006-pointers/' },
           { text: 'Basic File I/O', link: '/0007-basic-file-io/' },
           { text: 'Modularity', link: '/0008-modularity/' },
-          { text: 'Classes', link: '/0009-classes/' }
+          { text: 'Classes', link: '/0009-classes/' },
+          { text: 'Functions part 2', link: '/0010-functions-lambdas/' },
         ]
       }
     ],
