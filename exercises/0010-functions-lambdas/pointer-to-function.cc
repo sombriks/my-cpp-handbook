@@ -1,4 +1,9 @@
 
+#ifndef POINTER_TO_FUNCTION_CC
+#define POINTER_TO_FUNCTION_CC
+
+#include <iostream>
+
 namespace ptf
 {
 
@@ -20,4 +25,15 @@ namespace ptf
     }
   }
 
+  void printer(int *v, int vSize)
+  {
+    for (int i = 0; i < vSize; i++)
+    {
+      std::cout << v[i] << " ";
+    }
+    std::cout << std::endl;
+  }
+
 };
+
+#endif // POINTER_TO_FUNCTION_CC
