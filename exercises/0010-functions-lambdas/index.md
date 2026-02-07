@@ -10,13 +10,15 @@ language and in the std lib.
 pointers can store addresses, and functions has addresses as well. Therefore,
 this is valid C++ code:
 
-<<< pointer-to-function.cc
+<<< pointer-to-function.cc{cpp}
 
 The `void (*f)(int &)` might look like a bit clumsy, but the parenthesis around
 _*f_ make sure that you ton't mistype the return type (for example _int*_
 instead of _int_).
 
-## Function types
+### Function typedefs
+
+Optionally, you can write a `typedef` to make it easier to the eye:
 
 ## Lambdas
 

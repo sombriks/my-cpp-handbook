@@ -10,7 +10,8 @@
     "malloc",
     "ofstream",
     "seekp",
-    "strcpy"
+    "strcpy",
+    "typedef"
   ],
   "files.associations": {
     "*.njk": "html",
